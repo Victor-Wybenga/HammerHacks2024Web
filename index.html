@@ -2,8 +2,38 @@
 <html lang="en">
 <head>
     <title>My Cool Website</title>
+    <style>
+        button {
+            padding: 100px;
+            font-size: large;
+        }
+    </style>
 </head>
 <body>
+    
     <h1>My cool website</h1>
+    <blockquote>
+        "I've got a bad feeling about this"
+    </blockquote>
+
+    <h1 style="font-family: 'Courier New', Courier, monospace;">1</h1>
+    <button type="button" onclick="changeQuote()">Change Quote</button>
+
+    <script>
+        const choice = (list) => list[Math.floor(Math.random() * list.length)]
+        let index = 0;
+        const quotes = [
+            "It's over Anakin!, I have the high ground!",
+            "I've got a bad feeling about this",
+            "May the 4th be with you",
+            "UNLIMITED POWER!!!!",
+            "These aren't the droids you're looking for",
+            "Do It. (Palpatine goofy voice)"
+        ];
+        function changeQuote() {
+            let blockquote = document.querySelector("blockquote");
+            blockquote.innerHTML = `"${choice(quotes)}"`;
+        }
+    </script>
 </body>
 </html>
